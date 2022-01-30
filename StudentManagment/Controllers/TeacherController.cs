@@ -46,6 +46,22 @@ namespace StudentManagment.Controllers
             return View(teacher);
         }
 
+        // GET update Teacher
+        [HttpGet]
+        public async Task<IActionResult> Update(int? id)
+        {
+            if(id == null)
+            {
+                return NotFound();
+            }
+            var Teacher = await _context.Teachers.FindAsync(id);
+            if (Teacher == null)
+            {
+                return NotFound();
+            }
+            return View(Teacher);
+        }
+
         // Get Teacher Details
         public async Task<IActionResult> Details(int? id)
         {

@@ -76,10 +76,6 @@ namespace StudentManagment.Controllers
         [HttpGet]
         public async Task<IActionResult> Update(int? id)
         {
-            var Teacher = _context.Departments
-               .Include(t => t.Teacher);
-            var TeacherList = _context.Teachers.ToList();
-            ViewBag.TeacherList = new SelectList(TeacherList, "TeacherId", "TeacherName");
             if (id == null)
             {
                 return NotFound();
