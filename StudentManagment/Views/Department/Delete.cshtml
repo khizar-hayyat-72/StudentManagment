@@ -1,0 +1,39 @@
+﻿@model StudentManagment.Models.Department;
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+<hr />
+
+
+<h3>Are you sure you want to delete this?</h3>
+
+<div>
+
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(item => item.DepartmentId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(item => item.DepartmentId)
+        </dd>
+    
+        <dt>
+            @Html.DisplayNameFor(item => item.DeprtmentName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(item => item.DeprtmentName)
+        </dd>
+     
+
+    </dl>
+
+       <form asp-action="Delete">
+            <input type="hidden" asp-for="DepartmentId" />
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <br /> <br />
+            <a asp-action="Index">Back to List</a>
+        </form>
+</div>

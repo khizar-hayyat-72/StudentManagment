@@ -1,0 +1,46 @@
+﻿@model IEnumerable<StudentManagment.Models.Department>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="text-align:center;">Departments</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.DeprtmentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Teacher.TeacherName)
+            </th>
+
+            <th>
+              Actions
+            </th>
+            
+        </tr>
+    </thead>
+
+    @foreach(var item in Model)
+    {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.DeprtmentName)
+            </td>
+             <td>
+               <a asp-action="Details" asp-route-id = "@item.DepartmentId">Details</a> |
+               <a asp-action="Delete" asp-route-id = "@item.DepartmentId">Delete</a> |
+               <a asp-action="Update" asp-route-id = "@item.DepartmentId">Update</a>
+           </td>    
+        </tr>
+    }
+</table>
+
+<a asp-action="Create">Add Departmennt</a>
+
+

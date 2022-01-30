@@ -1,0 +1,21 @@
+﻿@model StudentManagment.Models.Course;
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@Html.DisplayFor(item => item.CourseName) Course</h1>
+
+<hr />
+
+<dl>
+
+    <dt>
+        <h2>@Html.DisplayNameFor(item => item.CourseCode)</h2>
+    </dt>
+    <dd>
+        <h4>@Html.DisplayFor(item => item.CourseCode)</h4>
+    </dd>
+
+</dl>
+
+<a asp-action = "Index">Back to List of Courses</a>

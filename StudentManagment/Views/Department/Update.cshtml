@@ -1,0 +1,34 @@
+﻿@model StudentManagment.Models.Department;
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>@Html.DisplayNameFor(item => item.DeprtmentName) Update</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Update">
+             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DepartmentId" />
+          <div class="form-group">
+                <label asp-for="DeprtmentName" class="control-label"></label>
+                <input asp-for ="DeprtmentName" class="form-control" />
+                <span asp-validation-for="DeprtmentName" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <label class="control-label col-md-2">Teachers</label>
+                <div class="col-md-12">
+                    @Html.DropDownListFor(model => model.TeacherId, ViewBag.TeacherList as SelectList, "--Select List", new{@class="form-control"})
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

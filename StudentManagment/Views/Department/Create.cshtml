@@ -1,0 +1,31 @@
+﻿@model StudentManagment.Models.Department;
+
+@{
+    ViewData["Title"] = "Depertment";
+}
+
+<h1>Add Department</h1>
+<hr />
+
+<div class= "row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label asp-for="DeprtmentName" class="control-label"></label>
+                <input asp-for ="DeprtmentName" class="form-control" />
+                <span asp-validation-for="DeprtmentName" class="text-danger"></span>
+            </div>
+           <div class="form-group">
+                <label class="control-label col-md-2">Teachers</label>
+                <div class="col-md-12">
+                    @Html.DropDownListFor(model => model.TeacherId, ViewBag.TeacherList as SelectList, "--Select List", new{@class="form-control"})
+                </div>
+            </div>
+         
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Add" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

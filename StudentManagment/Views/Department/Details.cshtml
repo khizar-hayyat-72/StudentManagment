@@ -1,0 +1,21 @@
+﻿@model StudentManagment.Models.Department;
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@Html.DisplayFor(item => item.DeprtmentName) Department</h1>
+
+<hr />
+
+<dl>
+
+    <dt>
+        <h2>@Html.DisplayNameFor(item => item.Teacher.TeacherName)</h2>
+    </dt>
+    <dd>
+        <h4>@Html.DisplayFor(item => item.Teacher.TeacherName)</h4>
+    </dd>
+
+</dl>
+
+<a asp-action = "Index">Back to List of Departments</a>

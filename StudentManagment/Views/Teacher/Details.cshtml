@@ -1,0 +1,61 @@
+﻿@model StudentManagment.Models.Teacher;
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1> @Html.DisplayFor(model => model.TeacherName)</h1>
+<hr />
+
+<dl class="row">
+    <dt>
+        <h2>@Html.DisplayNameFor(model => model.Departments) Details</h2>
+    </dt>
+    <dd>
+        <table>
+            @foreach(var item in Model.Departments)
+            {
+            <tr>
+                <td>
+                    <h4>@Html.DisplayFor(modelItem => item.DeprtmentName)</h4>
+                </td>
+            </tr>
+            }
+        </table>
+    </dd>
+</dl>
+
+<a asp-action="Index">Back to List</a>
+
+
+
+
+@*<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+
+<button id="details">Details</button>
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $(#details).(function() {
+                 $.ajax({
+                type: "GET",
+                url: "/TeacherController/Details",
+                success: function (response) {
+                    $(response).each(function () {
+                        alert("Hello" + this.name);
+                    })
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });     
+          });
+
+        }
+            });
+    </script>
+}
+*@
